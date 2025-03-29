@@ -1,13 +1,14 @@
 {
-    "name": "groton-school/slim-gae-skeleton",
-    "description": "A Slim Framework skeleton application for rapid development on Google App Engine",
+    "name": "groton-school/slim-lti-gae-skeleton",
+    "description": "A Slim Framework skeleton LTI Tool for rapid development on Google App Engine",
     "keywords": [
         "microframework",
         "rest",
         "router",
         "psr7",
         "google",
-        "gae"
+        "gae",
+        "lti"
     ],
     "homepage": "http://github.com/slimphp/Slim-Skeleton",
     "license": "MIT",
