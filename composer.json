@@ -30,6 +30,7 @@
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "type": "project",
     "require": {
         "php": "^7.4 || ^8.0",
         "ext-json": "*",
