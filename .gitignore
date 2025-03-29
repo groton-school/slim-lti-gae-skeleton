@@ -19,3 +19,7 @@ composer.phar
 composer.lock
 # Node
 /node_modules/
+# Environment
+.env
+.env.*
+!.env.example
