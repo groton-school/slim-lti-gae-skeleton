@@ -1,11 +1,13 @@
 {
-    "name": "slim/slim-skeleton",
-    "description": "A Slim Framework skeleton application for rapid development",
+    "name": "groton-school/slim-gae-skeleton",
+    "description": "A Slim Framework skeleton application for rapid development on Google App Engine",
     "keywords": [
         "microframework",
         "rest",
         "router",
-        "psr7"
+        "psr7",
+        "google",
+        "gae"
     ],
     "homepage": "http://github.com/slimphp/Slim-Skeleton",
     "license": "MIT",
@@ -19,6 +21,11 @@
             "name": "Pierre Berube",
             "email": "pierre@lgse.com",
             "homepage": "http://www.lgse.com/"
+        },
+        {
+            "name": "Seth Battis",
+            "email": "sbattis@groton.org",
+            "homepage": "https://www.groton.org"
         }
     ],
     "minimum-stability": "dev",
