@@ -5,7 +5,6 @@ declare(strict_types=1);
 use App\Application\Settings\Settings;
 use App\Application\Settings\SettingsInterface;
 use DI\ContainerBuilder;
-use Monolog\Logger;
 
 return function (ContainerBuilder $containerBuilder) {
 
@@ -16,11 +15,10 @@ return function (ContainerBuilder $containerBuilder) {
                 'displayErrorDetails' => true, // Should be set to false in production
                 'logError'            => false,
                 'logErrorDetails'     => false,
-                'logger' => [
-                    'name' => 'slim-app',
-                    'path' => isset($_ENV['docker']) ? 'php://stdout' : __DIR__ . '/../logs/app.log',
-                    'level' => Logger::DEBUG,
-                ],
+
+                // get Google Cloud Project ID and URL from local environment
+                Settings::PROJECT_ID => getenv('PROJECT'),
+                Settings::PROJECT_URL => getenv('PROJECT_URL')
             ]);
         }
     ]);

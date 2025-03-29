@@ -21,9 +21,12 @@
             "homepage": "http://www.lgse.com/"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": "^7.4 || ^8.0",
         "ext-json": "*",
+        "groton-school/slim-gae-shim": "dev-main",
         "monolog/monolog": "^2.9",
         "php-di/php-di": "^6.4",
         "slim/psr7": "^1.6",
