@@ -17,3 +17,5 @@ cache.properties
 # Composer
 composer.phar
 composer.lock
+# Node
+/node_modules/
