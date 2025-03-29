@@ -23,15 +23,6 @@ import path from 'node:path';
   });
 
   if (configure) {
-    await gcloud.services.enable(gcloud.services.API.CloudFirestoreAPI);
     await gcloud.services.enable(gcloud.services.API.CloudLoggingAPI);
-    const [{ name: database }] = JSON.parse(
-      Shell.exec(
-        `gcloud firestore databases list --project=${project.projectId} --format=json --quiet`
-      )
-    );
-    Shell.exec(
-      `gcloud firestore databases update --type=firestore-native --database="${database}" --project=${project.projectId} --format=json --quiet`
-    );
   }
 })();
