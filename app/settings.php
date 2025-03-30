@@ -20,6 +20,7 @@ return function (ContainerBuilder $containerBuilder) {
                 Settings::PROJECT_ID => getenv('GOOGLE_CLOUD_PROJECT'),
                 Settings::PROJECT_URL => 'https://' . getenv('HTTP_HOST'),
                 Settings::TOOL_NAME => 'slim-lti-gae-skeleton',
+                Settings::SCOPES => ['https://purl.imsglobal.org/spec/lti-nrps/scope/contextmembership.readonly'],
                 Settings::CACHE_DURATION => 3600 // seconds
             ]);
         }

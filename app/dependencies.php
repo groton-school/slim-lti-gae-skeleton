@@ -33,7 +33,7 @@ return function (ContainerBuilder $containerBuilder) {
         },
         // all settings interfaces map to the App Settings
         GAE\SettingsInterface::class => DI\get(SettingsInterface::class),
-        LTI\Application\SettingsInterface::class => DI\get(SettingsInterface::class),
+        LTI\SettingsInterface::class => DI\get(SettingsInterface::class),
         Infrastructure\GAE\SettingsInterface::class => DI\get(SettingsInterface::class),
 
         // autowire interface implementations

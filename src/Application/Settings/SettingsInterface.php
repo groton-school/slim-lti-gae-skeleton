@@ -10,7 +10,7 @@ use GrotonSchool\Slim\LTI\Infrastructure;
 
 interface SettingsInterface extends
     GAE\SettingsInterface,
-    LTI\Application\SettingsInterface,
+    LTI\SettingsInterface,
     Infrastructure\GAE\SettingsInterface
 {
     /**
