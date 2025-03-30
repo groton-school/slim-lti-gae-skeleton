@@ -10,7 +10,7 @@
         "gae",
         "lti"
     ],
-    "homepage": "http://github.com/slimphp/Slim-Skeleton",
+    "homepage": "http://github.com/groton-school/slim-lti-gae-skeleton",
     "license": "MIT",
     "authors": [
         {
