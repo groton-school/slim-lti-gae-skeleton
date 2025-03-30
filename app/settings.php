@@ -18,7 +18,9 @@ return function (ContainerBuilder $containerBuilder) {
 
                 // get Google Cloud Project ID and URL from local environment
                 Settings::PROJECT_ID => getenv('GOOGLE_CLOUD_PROJECT'),
-                Settings::PROJECT_URL => 'https://' . getenv('HTTP_HOST')
+                Settings::PROJECT_URL => 'https://' . getenv('HTTP_HOST'),
+                Settings::TOOL_NAME => 'slim-lti-gae-skeleton',
+                Settings::CACHE_DURATION => 3600 // seconds
             ]);
         }
     ]);

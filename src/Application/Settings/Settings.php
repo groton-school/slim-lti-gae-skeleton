@@ -8,6 +8,10 @@ class Settings implements SettingsInterface
 {
     public const PROJECT_ID = 'PROJECT_ID';
     public const PROJECT_URL = 'PROJECT_URL';
+    public const TOOL_NAME = 'TOOL_NAME';
+    public const TOOL_URL = self::PROJECT_URL;
+    public const SCOPES = 'SCOPES';
+    public const CACHE_DURATION = 'CACHE_DURATION';
 
     private array $settings;
 
@@ -29,7 +33,31 @@ class Settings implements SettingsInterface
         return $this->settings[self::PROJECT_ID];
     }
 
-    public function getProjectUrl(): string {
+    public function getProjectUrl(): string
+    {
         return $this->settings[self::PROJECT_URL];
+    }
+
+    public function getToolName(): string
+    {
+        return $this->settings[self::TOOL_NAME];
+    }
+
+    public function getToolUrl(): string
+    {
+        return $this->settings[self::TOOL_URL];
+    }
+
+    /**
+     * @return string[] 
+     */
+    public function getScopes(): array
+    {
+        return $this->settings[self::SCOPES];
+    }
+
+    public function getDuration(): int
+    {
+        return $this->settings[self::CACHE_DURATION];
     }
 }
