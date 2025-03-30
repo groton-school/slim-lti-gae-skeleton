@@ -17,8 +17,8 @@ return function (ContainerBuilder $containerBuilder) {
                 'logErrorDetails'     => false,
 
                 // get Google Cloud Project ID and URL from local environment
-                Settings::PROJECT_ID => getenv('PROJECT'),
-                Settings::PROJECT_URL => getenv('PROJECT_URL')
+                Settings::PROJECT_ID => getenv('GOOGLE_CLOUD_PROJECT'),
+                Settings::PROJECT_URL => 'https://' . getenv('HTTP_HOST')
             ]);
         }
     ]);
