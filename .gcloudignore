@@ -5,7 +5,6 @@
 !/app.yaml
 !/php.ini
 !/composer.*
-/composer.lock
 !/app
 !/public
 !/src
