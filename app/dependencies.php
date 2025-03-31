@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
+use App\Application\Handlers\LaunchHandler;
 use App\Application\Settings\SettingsInterface;
 use DI\ContainerBuilder;
 use Google\Cloud\Logging\LoggingClient;
 use GrotonSchool\Slim\GAE;
 use GrotonSchool\Slim\LTI;
-use GrotonSchool\Slim\LTI\Actions\RegistrationCompleteAction;
-use GrotonSchool\Slim\LTI\Actions\RegistrationCompleteActionInterface;
 use GrotonSchool\Slim\LTI\Actions\RegistrationConfigureActionInterface;
 use GrotonSchool\Slim\LTI\Actions\RegistrationConfigurePassthruAction;
+use GrotonSchool\Slim\LTI\Handlers\LaunchHandlerInterface;
 use GrotonSchool\Slim\LTI\Infrastructure;
 use GrotonSchool\Slim\LTI\Infrastructure\CacheInterface;
 use GrotonSchool\Slim\LTI\Infrastructure\Cookie;
@@ -52,6 +52,7 @@ return function (ContainerBuilder $containerBuilder) {
         CookieInterface::class => DI\autowire(Cookie::class),
         CacheInterface::class => DI\autowire(Cache::class),
         DatabaseInterface::class => DI\autowire(Database::class),
+        LaunchHandlerInterface::class => DI\autowire(LaunchHandler::class),
 
         /*
         * autowire registration configuration passthru (no interactive
