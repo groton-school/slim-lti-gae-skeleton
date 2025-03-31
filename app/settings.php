@@ -16,7 +16,7 @@ return function (ContainerBuilder $containerBuilder) {
             $PROJECT_URL = 'https://' . getenv('HTTP_HOST');
             $SCOPES = ['https://purl.imsglobal.org/spec/lti-nrps/scope/contextmembership.readonly'];
             return new Settings([
-                'displayErrorDetails' => true, // Should be set to false in production
+                'displayErrorDetails' => true, // TODO Should be set to false in production
                 'logError'            => false,
                 'logErrorDetails'     => false,
 
@@ -31,14 +31,12 @@ return function (ContainerBuilder $containerBuilder) {
                     'client_name' => $TOOL_NAME,
                     'client_uri' => $PROJECT_URL,
                     'grant_types' => ['client_credentials', 'implicit'],
-                    // TODO make LTI endpoints configurable via abstract settings class?
                     'jwks_uri' => "{$PROJECT_URL}/lti/jwks",
                     'token_endpoint_auth_method' => 'private_key_jwt',
                     'initiate_login_uri' =>  "{$PROJECT_URL}/lti/login",
                     'redirect_uris' => ["{$PROJECT_URL}/lti/launch"],
                     'response_types' => ['id_token'],
                     "scope" => join(' ', $SCOPES),
-                    // TODO does packbackbooks/lti-1p3-tool include any configuration builder tools?
                     'https://purl.imsglobal.org/spec/lti-tool-configuration' => [
                         'domain' => preg_replace('@^https?://@', '', $PROJECT_URL),
                         'target_link_uri' => "{$PROJECT_URL}/lti/launch",
