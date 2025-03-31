@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@battis/qui-cli.shell':
+        specifier: ^2.0.2
+        version: 2.0.2(@battis/qui-cli.colors@2.0.1(@battis/qui-cli.plugin@2.3.0))(@battis/qui-cli.log@2.1.0(@battis/qui-cli.colors@2.0.1(@battis/qui-cli.plugin@2.3.0))(@battis/qui-cli.plugin@2.3.0)(@battis/qui-cli.root@2.0.2(@battis/qui-cli.plugin@2.3.0)))(@battis/qui-cli.plugin@2.3.0)
     devDependencies:
       '@battis/partly-gcloudy':
         specifier: ^1.1.0
