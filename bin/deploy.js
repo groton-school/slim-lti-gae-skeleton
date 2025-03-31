@@ -1,28 +1,24 @@
-import gcloud from '@battis/partly-gcloudy';
-import { Core } from '@battis/qui-cli.core';
-import { Root } from '@battis/qui-cli.root';
-import { Shell } from '@battis/qui-cli.shell';
-import path from 'node:path';
+import gcloud from "@battis/partly-gcloudy";
+import { Core } from "@battis/qui-cli.core";
+import { Root } from "@battis/qui-cli.root";
+import { Shell } from "@battis/qui-cli.shell";
+import path from "node:path";
 
 (async () => {
   Root.configure({ root: path.dirname(import.meta.dirname) });
   const {
-    values: { force }
+    values: { force },
   } = await Core.init({
     flag: {
       force: {
-        short: 'f',
-        default: false
-      }
-    }
-  });
-  const configure = force || !process.env.PROJECT;
-
-  const { project } = await gcloud.batch.appEngineDeployAndCleanup({
-    retainVersions: 2
+        short: "f",
+        default: false,
+      },
+    },
   });
 
-  if (configure) {
+  if (force || !process.env.PROJECT) {
+    await gcloud.services.enable(gcloud.services.API.CloudLoggingAPI);
     await gcloud.services.enable(gcloud.services.API.CloudFirestoreAPI);
     await gcloud.services.enable(gcloud.services.API.CloudLoggingAPI);
     const [{ name: database }] = JSON.parse(
@@ -34,4 +30,8 @@ import path from 'node:path';
       `gcloud firestore databases update --type=firestore-native --database="${database}" --project=${project.projectId} --format=json --quiet`
     );
   }
+
+  const { project } = await gcloud.batch.appEngineDeployAndCleanup({
+    retainVersions: 2,
+  });
 })();
