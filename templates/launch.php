@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <h1><?= $messageType ?></h1>
-        <pre lang="json"><?= $launchData ?></pre>
+        <pre lang="json"><?= json_encode($launchData, JSON_PRETTY_PRINT) ?></pre>
     </div>
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

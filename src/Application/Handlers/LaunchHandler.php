@@ -21,7 +21,7 @@ class LaunchHandler implements LaunchHandlerInterface
         $data = $launch->getLaunchData();
         return $renderer->render($response, 'launch.php', [
             'messageType' => $data[LtiConstants::MESSAGE_TYPE],
-            'launchData' => json_encode($data, JSON_PRETTY_PRINT)
+            'launchData' => $data
         ]);
     }
 }
