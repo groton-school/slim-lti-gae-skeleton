@@ -4,4 +4,8 @@ basic_scaling:
 runtime_config:
   enable_stackdriver_integration: true
 entrypoint: serve public/index.php
-
+handlers:
+  - url: /assets
+    static_dir: public/assets
+  - url: .*
+    script: auto
