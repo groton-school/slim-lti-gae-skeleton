@@ -17,7 +17,7 @@ class LaunchHandler implements LaunchHandlerInterface
         /*
         * TODO actual handling of the LTI launch request goes here!
         */
-        $renderer = new PhpRenderer(__DIR__ . '/../../../templates');
+        $renderer = new PhpRenderer(__DIR__ . '/../../../views');
         $data = $launch->getLaunchData();
         return $renderer->render($response, 'launch.php', [
             'messageType' => $data[LtiConstants::MESSAGE_TYPE],
