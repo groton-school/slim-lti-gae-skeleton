@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace App\Domain\User;
 
-use League\OAuth2\Client\Token\AccessToken;
-
 class User
 {
     private string $locator;
@@ -26,20 +24,6 @@ class User
     public function getId()
     {
         return $this->data['id'];
-    }
-
-    public function getTokens()
-    {
-        return new AccessToken($this->data['tokens']);
-    }
-
-    public function setTokens(AccessToken $tokens)
-    {
-        if (!$tokens->getRefreshToken() && $this->getTokens()->getRefreshToken()) {
-            $tokens->setRefreshToken($this->getTokens()->getRefreshToken());
-        }
-        $this->data['tokens'] = $tokens->jsonSerialize();
-        $this->dirty = true;
     }
 
     public function getData()
