@@ -11,9 +11,8 @@ nbproject/
 !/logs/README.md
 # Cache
 /var/cache/*
-.phpunit.result.cache
 cache.properties
-.php_cs.cache
+*.cache
 # Composer
 composer.phar
 composer.lock
